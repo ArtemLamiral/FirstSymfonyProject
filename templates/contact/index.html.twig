@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+<div id="page-content" class="container">
+    <div class="row">
+        <div class="col-sm-4 contact-info text-center space-bottom">
+            <div class="contact-icon">
+                <i class="lnr lnr-map-marker"></i>
+            </div>
+            <h5>ADDRESS</h5>
+            <p>33 King Street, Suite 133</p>
+            <p>Itali, Florida</p>
+        </div><!-- / fcontact-info -->
+
+        <div class="col-sm-4 contact-info text-center space-bottom">
+            <div class="contact-icon">
+                <i class="lnr lnr-smartphone"></i>
+            </div>
+            <h5>PHONE</h5>
+            <p>Office: <a href="tel:+0123456789">+0123 456 789</a></p>
+            <p>Support: <a href="tel:+0987654321">+0987 654 321</a></p>
+        </div><!-- / contact-info -->
+
+        <div class="col-sm-4 contact-info text-center space-bottom">
+            <div class="contact-icon">
+                <i class="lnr lnr-envelope"></i>
+            </div>
+            <h5>EMAIL</h5>
+            <p>Office: <a href="mailto:office@yoursite.com">office@yoursite.com</a></p>
+            <p>Support: <a href="mailto:hello@yoursite.com">hello@yoursite.com</a></p>
+        </div><!-- / contact-info -->
+
+    </div><!-- / row -->
+
+    <div class="row contact-area">
+        <div class="col-sm-6 map">
+            <!-- google map -->
+            <div id="map"></div>
+            <!-- / google map -->
+        </div><!-- / map -->
+
+        <div class="col-sm-6 contact-form-area">
+            <!-- contact form 1col -->
+            <div id="contact-formd">
+                <form id="contact-form" action="mail.php" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="FULL NAME" name="name">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" class="form-control" rows="5" placeholder="MESSAGE" name="message"></textarea>
+                    <div class="help-block with-errors"></div>
+                    </div>
+                    <button type="submit" id="form-submit" class="btn btn-md btn-primary-filled btn-form-submit">SUBMIT FORM</button>
+                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+					<p class="form-messege"></p>
+                    <div class="clearfix"></div>  
+                </form>
+            </div><!-- / contact form 1col -->
+        </div><!-- / col-sm-6 -->
+    </div><!-- / contact-area -->
+
+</div><!-- / container -->
+
+<!-- / content -->
+
+<!-- footer -->
+<footer>
+    <div class="container">
+        <p class="footer-info">© MINIFY - MINIMAL PORTFOLIO
+            <span class="social pull-right">
+                <a href="#x"><i class="fa fa-facebook"></i></a>
+                <a href="#x"><i class="fa fa-twitter"></i></a>
+                <a href="#x"><i class="fa fa-instagram"></i></a>
+            </span>
+        </p>
+    </div><!-- / container -->
+</footer>
+<!-- / footer -->
+{% endblock %}

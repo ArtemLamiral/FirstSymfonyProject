@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Портфолио{% endblock %}
+
+    
+
+{% block body %}
+            <section id="portfolio" class="info-box two-col">
+    <div class="container">
+        <!-- portfolio filter -->
+        <ul class="portfolio-filter list-inline text-center">
+            <li><a href="#" data-group="all" class="active">ALL</a></li>
+            <li><a href="#" data-group="graphic-design">GRAPHIC DESIGN</a></li>
+            <li><a href="#" data-group="branding">BRANDING</a></li>
+            <li><a href="#" data-group="logo-design">LOGO DESIGN</a></li>
+            <li><a href="#" data-group="illustration">ILLUSTRATION</a></li>
+        </ul><!--end portfolio filter -->
+        <ul class="row portfolio list-unstyled lightbox" id="grid">
+
+
+      {% for my_project in projects %}
+
+
+            <!-- project -->
+            <li class="col-xs-6 project" data-groups='["illustration"]'>
+                <div class="img-bg-color primary">
+                    <a href="single-project.html" class="project-link"></a>
+                    <!-- / project-link -->
+                    <img src="{{my_project.imgUrl}}" alt="">
+                    <!-- / project-image -->
+
+                    <!-- project-hover-tools -->
+                    <div class="project-hover-tools">
+                        <a href="{{ path('single_project', {'id':my_project.id})}}" class="view-btn">
+                            <i class="lnr lnr-eye"></i>
+                        </a>
+                        <a href="#" class="open-gallery">
+                            <i class="lnr lnr-frame-expand"></i>
+                        </a>
+                    </div><!-- / project-hover-tools -->
+
+                    <!-- project-details -->
+                    <div class="project-details">
+                        <h5 class="project-title">{{my_project.title}}</h5>
+                        <p class="skill">{{my_project.description}}</p>
+                    </div><!-- / project-details -->
+                </div><!-- / img-bg-color -->
+            </li>
+            <!-- / project -->
+
+     
+      {% endfor %}
+       <!-- sizer -->
+            <li class="col-xs-6 shuffle_sizer"></li>      
+        </ul> <!-- / projects -->
+    </div><!-- / container -->
+
+</section>
+<!-- / portfolio section -->
+
+{% endblock %}
+    

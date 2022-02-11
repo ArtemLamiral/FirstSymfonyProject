@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Главная{% endblock %}
+
+ {% block carousel %}
+
+ 	<div class="owl-carousel owl-theme">
+
+	 	{% for project in projects %}
+
+	        <div class="item">
+
+	        	<a href="{{path('single_project', {'id':project.id})}}"><img src="{{project.imgUrl}}"></a>
+
+	        </div>
+	    
+	 	{% endfor %}
+
+ 	</div>
+
+ {% endblock %}
+ 	
+
